@@ -1,4 +1,4 @@
-/*
+﻿/*
 Copyright (C) 2025 QuantumNous
 
 This program is free software: you can redistribute it and/or modify
@@ -28,6 +28,12 @@ import {
 } from '@douyinfe/semi-ui';
 import { useTranslation } from 'react-i18next';
 import { selectFilter } from '../../../../helpers';
+
+const APP_ENDPOINT_TYPES = {
+  claude: ['anthropic'],
+  codex: ['openai', 'openai-response', 'openai-response-compact'],
+  gemini: ['gemini'],
+};
 
 const APP_CONFIGS = {
   claude: {
@@ -92,6 +98,17 @@ export default function CCSwitchModal({
   const [models, setModels] = useState({});
 
   const currentConfig = APP_CONFIGS[app];
+  const filteredModelOptions = useMemo(() => {
+    const allowedEndpointTypes = APP_ENDPOINT_TYPES[app] || [];
+    return (modelOptions || []).filter((option) => {
+      const supportedEndpointTypes = Array.isArray(option.supportedEndpointTypes)
+        ? option.supportedEndpointTypes
+        : [];
+      return allowedEndpointTypes.some((endpointType) =>
+        supportedEndpointTypes.includes(endpointType),
+      );
+    });
+  }, [app, modelOptions]);
 
   useEffect(() => {
     if (visible) {
@@ -177,14 +194,14 @@ export default function CCSwitchModal({
             </div>
             <Select
               placeholder={t('请选择模型')}
-              optionList={modelOptions}
+              optionList={filteredModelOptions}
               value={models[field.key] || undefined}
               onChange={(val) => handleModelChange(field.key, val)}
               filter={selectFilter}
               style={{ width: '100%' }}
               showClear
               searchable
-              emptyContent={t('暂无数据')}
+              emptyContent={t('当前应用没有兼容模型')}
             />
           </div>
         ))}

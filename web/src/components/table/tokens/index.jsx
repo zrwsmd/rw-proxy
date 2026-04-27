@@ -1,4 +1,4 @@
-/*
+﻿/*
 Copyright (C) 2025 QuantumNous
 
 This program is free software: you can redistribute it and/or modify
@@ -61,6 +61,7 @@ function TokensPage() {
     fetchTokenKey: async () => '',
   });
   const [modelOptions, setModelOptions] = useState([]);
+  const [ccSwitchModelOptions, setCCSwitchModelOptions] = useState([]);
   const [selectedModel, setSelectedModel] = useState('');
   const [fluentNoticeOpen, setFluentNoticeOpen] = useState(false);
   const [prefillKey, setPrefillKey] = useState('');
@@ -119,6 +120,56 @@ function TokensPage() {
     }
   };
 
+  const buildModelOptions = (data) => {
+    const categories = getModelCategories(tokensData.t);
+    return (data || []).map((model) => {
+      const modelName = typeof model === 'string' ? model : model?.id || '';
+      let icon = null;
+      for (const [key, category] of Object.entries(categories)) {
+        if (key !== 'all' && category.filter({ model_name: modelName })) {
+          icon = category.icon;
+          break;
+        }
+      }
+      return {
+        label: (
+          <span className='flex items-center gap-1'>
+            {icon}
+            {modelName}
+          </span>
+        ),
+        value: modelName,
+        supportedEndpointTypes: Array.isArray(model?.supported_endpoint_types)
+          ? model.supported_endpoint_types
+          : ['openai'],
+      };
+    });
+  };
+
+  const loadCCSwitchModels = async (key) => {
+    let status = localStorage.getItem('status');
+    let serverAddress = '';
+    if (status) {
+      try {
+        status = JSON.parse(status);
+        serverAddress = status.server_address || '';
+      } catch (_) {}
+    }
+    if (!serverAddress) serverAddress = window.location.origin;
+
+    const res = await fetch(`${serverAddress}/v1/models`, {
+      headers: {
+        Authorization: `Bearer sk-${key}`,
+      },
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to load compatible models (${res.status})`);
+    }
+    const payload = await res.json();
+    setCCSwitchModelOptions(buildModelOptions(payload.data || []));
+  };
+
   function openFluentNotification(key) {
     const { t } = latestRef.current;
     const SUPPRESS_KEY = 'fluent_notify_suppressed';
@@ -142,7 +193,7 @@ function TokensPage() {
           <div style={{ marginBottom: 8 }}>
             {key
               ? t('请选择模型。')
-              : t('选择模型后可一键填充当前选中令牌（或本页第一个令牌）。')}
+              : t('选择模型后可一键填充当前选中令牌（或本页第一个令牌）。') }
           </div>
           <div style={{ marginBottom: 8 }}>
             <Select
@@ -191,11 +242,14 @@ function TokensPage() {
   // assign after definition so hook callback can call it safely
   openFluentNotificationRef.current = openFluentNotification;
 
-  function openCCSwitchModal(key) {
-    if (modelOptions.length === 0) {
-      loadModels();
-    }
+  async function openCCSwitchModal(key) {
     setCCSwitchKey(key || '');
+    try {
+      await loadCCSwitchModels(key || '');
+    } catch (error) {
+      showError(error.message || 'Failed to load CC Switch models');
+      setCCSwitchModelOptions([]);
+    }
     setCCSwitchVisible(true);
   }
   openCCSwitchModalRef.current = openCCSwitchModal;
@@ -388,7 +442,7 @@ function TokensPage() {
         visible={ccSwitchVisible}
         onClose={() => setCCSwitchVisible(false)}
         tokenKey={ccSwitchKey}
-        modelOptions={modelOptions}
+        modelOptions={ccSwitchModelOptions}
       />
 
       <CardPro
@@ -441,3 +495,5 @@ function TokensPage() {
 }
 
 export default TokensPage;
+
+
