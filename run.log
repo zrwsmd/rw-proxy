@@ -1,0 +1,82 @@
+[SYS] 2026/04/27 - 14:04:23 | initializing token encoders 
+[SYS] 2026/04/27 - 14:04:23 | token encoders initialized 
+[SYS] 2026/04/27 - 14:04:23 | SQL_DSN not set, using SQLite as database 
+[SYS] 2026/04/27 - 14:04:23 | database migration started 
+[SYS] 2026/04/27 - 14:04:23 | system is already initialized at: 2026-04-24 15:22:39 +0800 CST 
+[SYS] 2026/04/27 - 14:04:23 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2026/04/27 - 14:04:23 | i18n initialized with languages: zh-CN, zh-TW, en 
+[SYS] 2026/04/27 - 14:04:23 | Loaded 0 custom OAuth providers 
+[SYS] 2026/04/27 - 14:04:23 | New API v0.0.0 started 
+[SYS] 2026/04/27 - 14:04:23 | 正在更新数据看板数据... 
+[INFO] 2026/04/27 - 14:04:23 | SYSTEM | codex credential auto-refresh task started: tick=10m0s threshold=24h0m0s 
+[INFO] 2026/04/27 - 14:04:23 | SYSTEM | subscription quota reset task started: tick=1m0s 
+[SYS] 2026/04/27 - 14:04:23 | upstream model update task started: interval=30m0s 
+[SYS] 2026/04/27 - 14:04:23 | 保存数据看板数据成功，共保存0条数据 
+
+  [32mrw-proxy v0.0.0[0m  ready in 245 ms
+
+  ➜  [1mLocal:[0m   http://localhost:3000/
+  ➜  [1mNetwork:[0m http://172.16.2.116:3000/
+  ➜  [1mNetwork:[0m http://192.168.37.25:3000/
+  ➜  [1mNetwork:[0m http://192.168.50.1:3000/
+  ➜  [1mNetwork:[0m http://192.168.1.69:3000/
+  ➜  [1mNetwork:[0m http://192.168.37.69:3000/
+  ➜  [1mNetwork:[0m http://192.168.47.56:3000/
+  ➜  [1mNetwork:[0m http://172.16.2.126:3000/
+
+[SYS] 2026/04/27 - 14:04:38 | 任务进度轮询开始 
+[SYS] 2026/04/27 - 14:04:38 | 任务进度轮询完成 
+[SYS] 2026/04/27 - 14:04:53 | 任务进度轮询开始 
+[SYS] 2026/04/27 - 14:04:53 | 任务进度轮询完成 
+[SYS] 2026/04/27 - 14:05:08 | 任务进度轮询开始 
+[SYS] 2026/04/27 - 14:05:08 | 任务进度轮询完成 
+[SYS] 2026/04/27 - 14:05:23 | syncing options from database 
+[SYS] 2026/04/27 - 14:05:23 | 任务进度轮询开始 
+[SYS] 2026/04/27 - 14:05:23 | 任务进度轮询完成 
+[SYS] 2026/04/27 - 14:05:38 | 任务进度轮询开始 
+[SYS] 2026/04/27 - 14:05:38 | 任务进度轮询完成 
+[SYS] 2026/04/27 - 14:05:53 | 任务进度轮询开始 
+[SYS] 2026/04/27 - 14:05:53 | 任务进度轮询完成 
+[SYS] 2026/04/27 - 14:06:08 | 任务进度轮询开始 
+[SYS] 2026/04/27 - 14:06:08 | 任务进度轮询完成 
+[SYS] 2026/04/27 - 14:06:23 | syncing options from database 
+[SYS] 2026/04/27 - 14:06:23 | 任务进度轮询开始 
+[SYS] 2026/04/27 - 14:06:23 | 任务进度轮询完成 
+[GIN] 2026/04/27 - 14:06:24 | web | 202604270606244250948008268d9d6WZQrcYy4 | 200 |       517.3µs |             ::1 |     GET /console/token
+[GIN] 2026/04/27 - 14:06:24 | web | 202604270606244482032008268d9d64fUdGOwP | 200 |     51.8462ms |             ::1 |     GET /assets/i18n-RrXBN1CV.js
+[GIN] 2026/04/27 - 14:06:24 | web | 202604270606244482032008268d9d6UMdXuDbi | 200 |     56.4817ms |             ::1 |     GET /assets/react-core-D-iPSUlg.js
+[GIN] 2026/04/27 - 14:06:24 | web | 202604270606245036388008268d9d6PmjjMmA1 | 200 |      3.1097ms |             ::1 |     GET /assets/tools-PDT6Ig-2.js
+[GIN] 2026/04/27 - 14:06:24 | web | 202604270606245067485008268d9d6jB9QEvlb | 200 |       993.4µs |             ::1 |     GET /assets/react-components-BnylIsR_.js
+[GIN] 2026/04/27 - 14:06:24 | web | 202604270606244482032008268d9d6xIEVVApL | 200 |     63.0518ms |             ::1 |     GET /assets/semi-ui-yRXI6evF.css
+[GIN] 2026/04/27 - 14:06:24 | web | 202604270606244482032008268d9d6NHs5zDdq | 200 |      65.051ms |             ::1 |     GET /assets/index-24XcKSBY.css
+[GIN] 2026/04/27 - 14:06:24 | web | 202604270606244482032008268d9d6WQ2pnbgX | 200 |    100.7096ms |             ::1 |     GET /assets/semi-ui-BzZ1UhpZ.js
+[GIN] 2026/04/27 - 14:06:24 | web | 202604270606244476825008268d9d6YnCvtogl | 200 |    222.0165ms |             ::1 |     GET /assets/index-Ca7S5o8V.js
+[GIN] 2026/04/27 - 14:06:24 | api | 202604270606249407610008268d9d6o6Co9Knw | 401 |       517.7µs |             ::1 |     GET /api/user/self
+[GIN] 2026/04/27 - 14:06:24 | api | 202604270606249407610008268d9d6FZLKAofx | 401 |       517.7µs |             ::1 |     GET /api/user/models
+[GIN] 2026/04/27 - 14:06:24 | api | 202604270606249412787008268d9d6ATVOZ8SP | 401 |       517.3µs |             ::1 |     GET /api/user/self/groups
+[GIN] 2026/04/27 - 14:06:24 | api | 202604270606249417960008268d9d6tDIKL0Ma | 401 |       515.5µs |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2026/04/27 - 14:06:24 | api | 202604270606249432594008268d9d6Y2UncmCi | 200 |            0s |             ::1 |     GET /api/status
+[GIN] 2026/04/27 - 14:06:24 | web | 202604270606249971935008268d9d6gjSmlaVg | 200 |            0s |             ::1 |     GET /login?expired=true
+[GIN] 2026/04/27 - 14:06:25 | api | 202604270606259756008268d9d6BYrTeJYA | 401 |            0s |             ::1 |     GET /api/user/self
+[GIN] 2026/04/27 - 14:06:25 | web | 2026042706062520081008268d9d6FpwpihmQ | 200 |       996.6µs |             ::1 |     GET /logo.png
+[GIN] 2026/04/27 - 14:06:25 | api | 202604270606252106379008268d9d6bzBS2UeP | 200 |            0s |             ::1 |     GET /api/status
+
+2026/04/27 14:06:26 [31;1mE:/codex-project/rw-middle-api/model/twofa.go:45 [35;1mrecord not found
+[0m[33m[0.000ms] [34;1m[rows:0][0m SELECT * FROM `two_fas` WHERE user_id = 1 AND `two_fas`.`deleted_at` IS NULL ORDER BY `two_fas`.`id` LIMIT 1
+[GIN] 2026/04/27 - 14:06:26 | api | 202604270606264864919008268d9d6E44NJvQP | 200 |     55.1875ms |             ::1 |    POST /api/user/login?turnstile=
+[GIN] 2026/04/27 - 14:06:26 | api | 202604270606265620151008268d9d6rFc1TgWJ | 200 |       509.7µs |             ::1 |     GET /api/user/self
+[GIN] 2026/04/27 - 14:06:26 | api | 202604270606266437738008268d9d61eTEQTXb | 200 |       520.3µs |             ::1 |     GET /api/user/self
+[GIN] 2026/04/27 - 14:06:26 | api | 202604270606266450590008268d9d6p5mZP29t | 200 |       518.6µs |             ::1 |     GET /api/data/?username=&start_timestamp=1777183586&end_timestamp=1777273586&default_time=hour
+[GIN] 2026/04/27 - 14:06:26 | api | 202604270606266853124008268d9d6rtwWI8tn | 200 |       516.3µs |             ::1 |     GET /api/data/users?start_timestamp=1777183586&end_timestamp=1777273586
+[GIN] 2026/04/27 - 14:06:26 | api | 202604270606267320507008268d9d6V41fF690 | 200 |            0s |             ::1 |     GET /api/uptime/status
+[GIN] 2026/04/27 - 14:06:27 | api | 202604270606279915277008268d9d63CE6TaWC | 200 |       517.1µs |             ::1 |     GET /api/user/self/groups
+[GIN] 2026/04/27 - 14:06:27 | api | 202604270606279915277008268d9d6yRk5cxLU | 200 |      1.0238ms |             ::1 |     GET /api/user/models
+[GIN] 2026/04/27 - 14:06:27 | api | 202604270606279915277008268d9d6fcfk6YPd | 200 |      2.0502ms |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2026/04/27 - 14:06:30 | api | 202604270606302536132008268d9d6OdFLqhIL | 200 |      1.0863ms |             ::1 |    POST /api/token/9001/key
+[GIN] 2026/04/27 - 14:06:30 | relay | 202604270606302655417008268d9d6dTN42bVk | 200 |      1.0425ms |             ::1 |     GET /v1/models
+[SYS] 2026/04/27 - 14:06:38 | 任务进度轮询开始 
+[SYS] 2026/04/27 - 14:06:38 | 任务进度轮询完成 
+[SYS] 2026/04/27 - 14:06:53 | 任务进度轮询开始 
+[SYS] 2026/04/27 - 14:06:53 | 任务进度轮询完成 
+[SYS] 2026/04/27 - 14:07:08 | 任务进度轮询开始 
+[SYS] 2026/04/27 - 14:07:08 | 任务进度轮询完成 
