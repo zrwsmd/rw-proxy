@@ -124,6 +124,7 @@ export function getLucideIcon(key, selected = false) {
     case 'detail':
       return <LayoutDashboard {...commonProps} color={iconColor} />;
     case 'playground':
+    case 'codex':
       return <TerminalSquare {...commonProps} color={iconColor} />;
     case 'chat':
       return <MessageSquare {...commonProps} color={iconColor} />;

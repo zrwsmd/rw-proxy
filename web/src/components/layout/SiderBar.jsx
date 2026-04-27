@@ -48,6 +48,7 @@ const routerMap = {
   models: '/console/models',
   deployment: '/console/deployment',
   playground: '/console/playground',
+  codex: '/console/codex',
   personal: '/console/personal',
 };
 
@@ -128,6 +129,11 @@ const SiderBar = ({ onNavigate = () => {} }) => {
         text: t('钱包管理'),
         itemKey: 'topup',
         to: '/topup',
+      },
+      {
+        text: 'Codex 配置',
+        itemKey: 'codex',
+        to: '/codex',
       },
       {
         text: t('个人设置'),
